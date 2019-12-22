@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FAddDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAddDevice.Designer.cs">
+      <DependentUpon>FAddDevice.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAddOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FAddDevice.resx">
+      <DependentUpon>FAddDevice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FAddOrder.resx">
       <DependentUpon>FAddOrder.cs</DependentUpon>
     </EmbeddedResource>
