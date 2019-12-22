@@ -56,6 +56,12 @@
     <Compile Include="FAddOrder.Designer.cs">
       <DependentUpon>FAddOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="FCatManList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCatManList.Designer.cs">
+      <DependentUpon>FCatManList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FDevicesList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FAddOrder.resx">
       <DependentUpon>FAddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCatManList.resx">
+      <DependentUpon>FCatManList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDevicesList.resx">
       <DependentUpon>FDevicesList.cs</DependentUpon>
