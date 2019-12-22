@@ -132,6 +132,7 @@
             // 
             this.gridOrdersList.AllowUserToAddRows = false;
             this.gridOrdersList.AllowUserToDeleteRows = false;
+            this.gridOrdersList.BackgroundColor = System.Drawing.Color.White;
             this.gridOrdersList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridOrdersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridOrdersList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -143,10 +144,11 @@
             // 
             // btnAddOrder
             // 
-            this.btnAddOrder.BackColor = System.Drawing.Color.LightGreen;
-            this.btnAddOrder.FlatAppearance.BorderSize = 0;
+            this.btnAddOrder.FlatAppearance.BorderColor = System.Drawing.Color.LightGreen;
+            this.btnAddOrder.FlatAppearance.BorderSize = 2;
             this.btnAddOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddOrder.ForeColor = System.Drawing.Color.Green;
             this.btnAddOrder.Location = new System.Drawing.Point(640, 5);
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.Size = new System.Drawing.Size(154, 32);
