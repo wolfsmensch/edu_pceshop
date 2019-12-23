@@ -35,5 +35,12 @@ namespace PC_eShop
             FCatManList manForm = new FCatManList("MAN");
             manForm.ShowDialog();
         }
+
+        // Меню: Комплектующие -> Список комплектующих
+        private void списокКомплектующихToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FDevicesList devicesList = new FDevicesList();
+            devicesList.ShowDialog();
+        }
     }
 }

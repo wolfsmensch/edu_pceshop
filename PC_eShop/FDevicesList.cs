@@ -15,5 +15,12 @@ namespace PC_eShop
         {
             InitializeComponent();
         }
+
+        // Нажата кнопка "Добавить"
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FAddDevice addDevice = new FAddDevice();
+            addDevice.ShowDialog();
+        }
     }
 }

@@ -73,6 +73,7 @@
             this.списокКомплектующихToolStripMenuItem.Name = "списокКомплектующихToolStripMenuItem";
             this.списокКомплектующихToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.списокКомплектующихToolStripMenuItem.Text = "Список комплектующих";
+            this.списокКомплектующихToolStripMenuItem.Click += new System.EventHandler(this.списокКомплектующихToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
