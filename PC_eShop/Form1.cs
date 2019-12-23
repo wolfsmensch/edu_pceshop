@@ -19,7 +19,8 @@ namespace PC_eShop
         // Кнопка "Добавить заказ"
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-
+            FAddOrder addOrder = new FAddOrder();
+            addOrder.ShowDialog();
         }
 
         // Меню: Комплектующие -> Категории
