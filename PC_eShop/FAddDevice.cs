@@ -56,6 +56,43 @@ namespace PC_eShop
             comboCat.SelectedIndex = 0;
             comboMan.SelectedIndex = 0;
         }
+
+        // Нажата кнопка "Добавить"
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            // Проверка заполненности полей
+            bool fieldsIsSet = true;
+            if (textName.Text.Length <= 0)
+                fieldsIsSet = false;
+
+            if (textCount.Text.Length <= 0)
+                fieldsIsSet = false;
+
+            if (textPrice.Text.Length <= 0)
+                fieldsIsSet = false;
+
+            if (textDesc.Text.Length <= 0)
+                fieldsIsSet = false;
+
+            if ( !fieldsIsSet )
+            {
+                MessageBox.Show("Не все поля заполнены", "Есть незаполненные поля", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // TODO: Реализовать проверку корректности данных
+
+            // Получение ID выбранной категории и производителя
+            int catID = catList[comboCat.SelectedIndex].ID;
+            int manID = brandList[comboMan.SelectedIndex].ID;
+
+            // Добавление записи в БД
+            DataBase.execSql("INSERT INTO [PC_eShop].[dbo].[Goods](Name, CAT_ID, MF_ID, TechDesc, StockQuant, Price) " +
+                             "VALUES('"+textName.Text+"', "+catID.ToString()+", "+manID.ToString()+", '"+textDesc.Text+"', "+textCount.Text+", "+textPrice.Text+")");
+
+            MessageBox.Show("Запись добавлена", "Запись добавлена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
     }
 
     // Класс категорий

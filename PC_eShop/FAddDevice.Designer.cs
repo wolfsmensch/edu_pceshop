@@ -175,6 +175,7 @@
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FAddDevice
             // 
