@@ -30,9 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridDevice = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDevice)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,18 +61,18 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dataGridView1
+            // gridDevice
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 396);
-            this.dataGridView1.TabIndex = 1;
+            this.gridDevice.AllowUserToAddRows = false;
+            this.gridDevice.AllowUserToDeleteRows = false;
+            this.gridDevice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDevice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDevice.Location = new System.Drawing.Point(0, 0);
+            this.gridDevice.Name = "gridDevice";
+            this.gridDevice.ReadOnly = true;
+            this.gridDevice.Size = new System.Drawing.Size(800, 396);
+            this.gridDevice.TabIndex = 1;
             // 
             // FDevicesList
             // 
@@ -80,12 +80,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridDevice);
             this.Controls.Add(this.panel1);
             this.Name = "FDevicesList";
             this.Text = "Список комплектующих";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDevice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,6 +94,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridDevice;
     }
 }

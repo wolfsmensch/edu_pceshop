@@ -15,13 +15,15 @@ namespace PC_eShop
     {
         private List<DeviceCategory> catList;
         private List<DeviceBrand> brandList;
+        private Action updList;
 
-        public FAddDevice()
+        public FAddDevice(Action updList = null)
         {
             InitializeComponent();
 
             catList = new List<DeviceCategory>();
             brandList = new List<DeviceBrand>();
+            this.updList = updList;
 
             prepareForm();
         }
@@ -91,6 +93,9 @@ namespace PC_eShop
                              "VALUES('"+textName.Text+"', "+catID.ToString()+", "+manID.ToString()+", '"+textDesc.Text+"', "+textCount.Text+", "+textPrice.Text+")");
 
             MessageBox.Show("Запись добавлена", "Запись добавлена", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if ( updList != null )
+                updList();
+
             this.Close();
         }
     }
