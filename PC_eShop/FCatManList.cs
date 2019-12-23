@@ -29,5 +29,28 @@ namespace PC_eShop
 
             this.Text = btnAdd.Text;
         }
+
+        // Кнопка: Добавить ...
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            // Проверка поля с названием
+            if (textName.Text.Length <= 0)
+            {
+                MessageBox.Show("Заполните поле \"Название\"", "Поле не заполнено", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Добавление в БД
+            string tableName = String.Empty;
+            if (this.FormMode == "CAT")
+                tableName = "Categories";
+            else
+                tableName = "Manufacturer";
+
+            DataBase.execSql("INSERT INTO [" + tableName + "] (Name) VALUES ('" + textName.Text + "')");
+
+            textName.Text = String.Empty;
+            MessageBox.Show("Запись добавлена");
+        }
     }
 }
