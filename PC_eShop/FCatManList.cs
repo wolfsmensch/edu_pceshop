@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Data.SqlClient;
+
 namespace PC_eShop
 {
     public partial class FCatManList : Form
     {
         private string FormMode;
+        private string tableName;
 
         /*
          * FormMode - режим работы формы (CAT/MAN)
@@ -23,11 +26,19 @@ namespace PC_eShop
             this.FormMode = FormMode;
 
             if (FormMode == "CAT")
+            {
                 btnAdd.Text = "Добавить категорию";
+                tableName = "Categories";        
+            }
             else
+            {
                 btnAdd.Text = "Добавить производителя";
+                tableName = "Manufacturer";
+
+            }
 
             this.Text = btnAdd.Text;
+            updList();
         }
 
         // Кнопка: Добавить ...
@@ -41,16 +52,39 @@ namespace PC_eShop
             }
 
             // Добавление в БД
-            string tableName = String.Empty;
-            if (this.FormMode == "CAT")
-                tableName = "Categories";
-            else
-                tableName = "Manufacturer";
-
             DataBase.execSql("INSERT INTO [" + tableName + "] (Name) VALUES ('" + textName.Text + "')");
 
+            updList();
+
             textName.Text = String.Empty;
-            MessageBox.Show("Запись добавлена");
+        }
+
+        // Обновление списка
+        private void updList()
+        {
+            // Настройка компонента DataGridView
+            gridRecs.Rows.Clear();
+
+            gridRecs.ColumnCount = 1;
+            gridRecs.Columns[0].Name = (FormMode == "CAT") ? "Название категории" : "Наименование производителя";
+            gridRecs.Columns[0].Width = 260;
+
+            gridRecs.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            gridRecs.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridRecs.MultiSelect = false;
+
+            // Получение записей из БД
+            SqlDataReader reader = DataBase.readData("SELECT [Name] FROM [" + tableName + "]");
+
+            // Вывод данных
+            while(reader.HasRows && reader.Read())
+            {
+                string[] rowData = { reader.GetString(0) };
+                gridRecs.Rows.Add(rowData);
+            }
+
+            reader.Close();
         }
     }
 }
