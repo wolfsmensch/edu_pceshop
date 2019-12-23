@@ -15,5 +15,11 @@ namespace PC_eShop
         {
             InitializeComponent();
         }
+
+        // Кнопка "Добавить заказ"
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
