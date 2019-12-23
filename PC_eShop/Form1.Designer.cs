@@ -84,12 +84,14 @@
             this.категорииToolStripMenuItem.Name = "категорииToolStripMenuItem";
             this.категорииToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.категорииToolStripMenuItem.Text = "Категории";
+            this.категорииToolStripMenuItem.Click += new System.EventHandler(this.категорииToolStripMenuItem_Click);
             // 
             // производителиToolStripMenuItem
             // 
             this.производителиToolStripMenuItem.Name = "производителиToolStripMenuItem";
             this.производителиToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.производителиToolStripMenuItem.Text = "Производители";
+            this.производителиToolStripMenuItem.Click += new System.EventHandler(this.производителиToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
             // 

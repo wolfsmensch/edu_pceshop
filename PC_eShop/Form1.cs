@@ -21,5 +21,19 @@ namespace PC_eShop
         {
 
         }
+
+        // Меню: Комплектующие -> Категории
+        private void категорииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FCatManList catForm = new FCatManList("CAT");
+            catForm.ShowDialog();
+        }
+
+        // Меню: Комплектующие -> Производители
+        private void производителиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FCatManList manForm = new FCatManList("MAN");
+            manForm.ShowDialog();
+        }
     }
 }
