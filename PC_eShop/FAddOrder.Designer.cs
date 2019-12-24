@@ -217,6 +217,7 @@
             this.btnAddToList.TabIndex = 0;
             this.btnAddToList.Text = "Добавить комплектующие";
             this.btnAddToList.UseVisualStyleBackColor = false;
+            this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
             // 
             // FAddOrder
             // 

@@ -9,17 +9,15 @@ using System.Windows.Forms;
 
 namespace PC_eShop
 {
-    public partial class FAddOrder : Form
+    public partial class FAddOrderDevice : Form
     {
-        public FAddOrder()
+        private FAddOrder parentForm;
+
+        public FAddOrderDevice(FAddOrder parentForm)
         {
             InitializeComponent();
-        }
 
-        private void btnAddToList_Click(object sender, EventArgs e)
-        {
-            FAddOrderDevice addOrderDevice = new FAddOrderDevice(this);
-            addOrderDevice.ShowDialog();
+            this.parentForm = parentForm;
         }
     }
 }
