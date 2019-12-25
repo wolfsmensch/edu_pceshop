@@ -114,6 +114,38 @@ namespace PC_eShop
 
             textSum.Text = sum.ToString() + " тг.";
         }
+
+        // Нажата кнопка: Добавить заказ
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            // Проверка полей и таблицы
+            if ( ( textFIO.Text.Length <= 0 ) || ( textPhone.Text.Length <= 0 ) )
+            {
+                MessageBox.Show("Не заполнена информация о клиенте", "Не все поля заполнены", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if ( devicesList.Count <= 0 )
+            {
+                MessageBox.Show("Отсутствует состав заказа (нет компонентов)", "Нет состава заказа", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Сохранение заказа
+            Order order = new Order();
+
+            order.clientName = textFIO.Text;
+            order.clientPhone = textPhone.Text;
+
+            order.dateCreate = dateOrder.Value;
+
+            order.orderList = devicesList;
+
+            order.addToDB();
+
+            MessageBox.Show("Заказ сохранен", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
+        }
     }
 
     // Класс комплектующих
@@ -193,9 +225,12 @@ namespace PC_eShop
                              "VALUES('"+dateCreate.ToShortDateString()+ "', '"+clientName+"', '"+clientPhone+"', "+getTotalPrice().ToString()+")");
 
             // Получение ID нового заказа
-            SqlDataReader reader = DataBase.readData("select @@IDENTITY");
-            ID = reader.GetInt32(0);
-            reader.Close();
+            SqlDataReader reader = DataBase.readData("SELECT MAX(ORD_ID) AS 'ID' FROM [Order]");
+            if ( reader.HasRows && reader.Read() )
+            {
+                ID = reader.GetInt32(0);
+                reader.Close();
+            }
 
             // Связывание устройств с заказом
             for (int i = 0; i < orderList.Count; i++)
@@ -220,7 +255,7 @@ namespace PC_eShop
         }
 
         // Получение итоговой цены заказа
-        private int getTotalPrice()
+        public int getTotalPrice()
         {
             int sum = 0;
 
