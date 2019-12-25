@@ -71,6 +71,9 @@ namespace PC_eShop
 
                 gridDevice.Rows.Add(rowData);
             }
+
+            // Подсчет суммы заказа
+            calcOrderPrice();
         }
 
         // Проверка: устройство есть в заказе
@@ -96,6 +99,20 @@ namespace PC_eShop
 
             devicesList.Add(device);
             updDeviceTable();
+        }
+
+        // Подсчет общей стоимости заказа
+        private void calcOrderPrice()
+        {
+            int sum = 0;
+
+            if (devicesList.Count > 0)
+            {
+                for (int i = 0; i < devicesList.Count; i++)
+                    sum += devicesList[i].Price;
+            }
+
+            textSum.Text = sum.ToString() + " тг.";
         }
     }
 
