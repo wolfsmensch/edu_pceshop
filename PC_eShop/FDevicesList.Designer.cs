@@ -48,11 +48,11 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.LightGreen;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
             this.btnAdd.FlatAppearance.BorderSize = 2;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Green;
+            this.btnAdd.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnAdd.Location = new System.Drawing.Point(665, 11);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(124, 33);
