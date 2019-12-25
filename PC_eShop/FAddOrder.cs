@@ -72,6 +72,18 @@ namespace PC_eShop
                 gridDevice.Rows.Add(rowData);
             }
         }
+
+        // Проверка: устройство есть в заказе
+        public bool isCategoryInOrder(int catID)
+        {
+            for (int i = 0; i < devicesList.Count; i++)
+            {
+                if (devicesList[i].CatID == catID)
+                    return true;
+            }
+
+            return false;
+        }
     }
 
     // Класс комплектующих
