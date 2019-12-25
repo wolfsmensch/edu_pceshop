@@ -11,9 +11,59 @@ namespace PC_eShop
 {
     public partial class MainForm : Form
     {
+        public List<Order> ordersList;
+
         public MainForm()
         {
             InitializeComponent();
+            ordersList = new List<Order>();
+
+            updOrdersTable();
+        }
+
+        // Обновление таблицы заказов
+        public void updOrdersTable()
+        {
+            // Получение списка
+            ordersList = Order.getList();
+
+            // Настройка таблицы
+            gridOrdersList.Rows.Clear();
+
+            gridOrdersList.ColumnCount = 5;
+
+            gridOrdersList.Columns[0].Name = "№";
+            gridOrdersList.Columns[1].Name = "Имя клиента";
+            gridOrdersList.Columns[2].Name = "Телефон клиента";
+            gridOrdersList.Columns[3].Name = "Дата заказа";
+            gridOrdersList.Columns[4].Name = "Сумма";
+
+            gridOrdersList.Columns[0].Width = 50;
+            gridOrdersList.Columns[1].Width = 250;
+            gridOrdersList.Columns[3].Width = 150;
+
+            gridOrdersList.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gridOrdersList.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gridOrdersList.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gridOrdersList.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            gridOrdersList.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridOrdersList.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridOrdersList.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridOrdersList.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridOrdersList.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            gridOrdersList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridOrdersList.MultiSelect = false;
+
+            // Вывод строк таблицы
+            for (int i = 0; i < ordersList.Count; i++)
+            {
+                Order order = ordersList[i];
+                string[] rowData = { order.ID.ToString(), order.clientName, order.clientPhone, order.dateCreate.ToLongDateString(), order.totalPrice.ToString() + " тг." };
+
+                gridOrdersList.Rows.Add(rowData);
+            }
         }
 
         // Кнопка "Добавить заказ"
