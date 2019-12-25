@@ -24,7 +24,7 @@ namespace PC_eShop
             devList = new List<Device>();
 
             updCatList();
-
+            updDevList();
         }
 
         // Обновление списка категорий
@@ -43,7 +43,23 @@ namespace PC_eShop
         // Обновление списка компонентов
         private void updDevList()
         {
+            devList = Device.getByCatID(catList[comboCat.SelectedIndex].ID);
 
+            listDevice.Items.Clear();
+
+            if ( devList.Count > 0 )
+            {
+                for (int i = 0; i < devList.Count; i++)
+                    listDevice.Items.Add(devList[i].ManName + " " + devList[i].Name);
+
+                listDevice.SelectedIndex = 0;
+            }
+        }
+
+        // В выпадающем меню изменена категория
+        private void comboCat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updDevList();
         }
     }
 }

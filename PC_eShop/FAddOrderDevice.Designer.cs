@@ -51,6 +51,7 @@
             this.comboCat.Name = "comboCat";
             this.comboCat.Size = new System.Drawing.Size(218, 21);
             this.comboCat.TabIndex = 1;
+            this.comboCat.SelectedIndexChanged += new System.EventHandler(this.comboCat_SelectedIndexChanged);
             // 
             // listDevice
             // 
