@@ -111,6 +111,21 @@ namespace PC_eShop
             this.ID = ID;
             this.Name = Name;
         }
+
+        // Получение списка категорий
+        public static List<DeviceCategory> getList()
+        {
+            List<DeviceCategory> list = new List<DeviceCategory>();
+
+            // Получение списка категорий
+            SqlDataReader catReader = DataBase.readData("SELECT [CAT_ID], [Name] FROM [Categories]");
+            while (catReader.HasRows && catReader.Read())
+                list.Add(new DeviceCategory(catReader.GetInt32(0), catReader.GetString(1)));
+
+            catReader.Close();
+
+            return list;
+        }
     }
 
     // Класс производителей
