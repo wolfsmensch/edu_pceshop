@@ -61,5 +61,12 @@ namespace PC_eShop
         {
             updDevList();
         }
+
+        // Нажата кнопка: Добавить в заказ
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if ( (devList.Count > 0) && (listDevice.SelectedIndex >= 0) )
+                parentForm.addDeviceToOrder(devList[listDevice.SelectedIndex]);
+        }
     }
 }

@@ -84,6 +84,19 @@ namespace PC_eShop
 
             return false;
         }
+
+        // Добавление устройства в заказ
+        public void addDeviceToOrder(Device device)
+        {
+            if (isCategoryInOrder(device.CatID))
+            {
+                MessageBox.Show("Устройство из категории " + device.CatName + " уже имеется в заказе", "Нельзя добавить устройство в заказ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            devicesList.Add(device);
+            updDeviceTable();
+        }
     }
 
     // Класс комплектующих

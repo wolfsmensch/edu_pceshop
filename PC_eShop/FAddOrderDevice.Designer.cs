@@ -75,6 +75,7 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Добавить в заказ";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
