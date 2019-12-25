@@ -58,6 +58,12 @@ namespace PC_eShop
         {
             updChart();
         }
+
+        // Нажата кнопка "Обновить"
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updChart();
+        }
     }
 
     // Класс отчета по категориям
