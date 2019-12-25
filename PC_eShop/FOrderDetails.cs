@@ -11,9 +11,12 @@ namespace PC_eShop
 {
     public partial class FOrderDetails : Form
     {
-        public FOrderDetails()
+        private Order order;
+
+        public FOrderDetails(Order order)
         {
             InitializeComponent();
+            this.order = order;
         }
     }
 }

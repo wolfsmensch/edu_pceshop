@@ -99,5 +99,15 @@ namespace PC_eShop
         {
             updOrdersTable();
         }
+
+        // Совершен двойной клик по таблице
+        private void gridOrdersList_DoubleClick(object sender, EventArgs e)
+        {
+            if ( ( ordersList.Count > 0 ) && ( gridOrdersList.SelectedRows.Count > 0 ) )
+            {
+                FOrderDetails orderDetails = new FOrderDetails(ordersList[gridOrdersList.SelectedRows[0].Index]);
+                orderDetails.Show();
+            }
+        }
     }
 }

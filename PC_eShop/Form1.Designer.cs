@@ -163,6 +163,7 @@
             this.gridOrdersList.ReadOnly = true;
             this.gridOrdersList.Size = new System.Drawing.Size(800, 385);
             this.gridOrdersList.TabIndex = 2;
+            this.gridOrdersList.DoubleClick += new System.EventHandler(this.gridOrdersList_DoubleClick);
             // 
             // btnUpdate
             // 
