@@ -110,11 +110,18 @@ namespace PC_eShop
             }
         }
 
-        // Пункт меню: Отчет -> Отчет по категориям
+        // Пункт меню: Отчеты -> Заказы по категориям
         private void заказыПоКатегориямToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FReportCat reportCat = new FReportCat();
             reportCat.Show();
+        }
+
+        // Пункт меню: Отчеты -> Заказы по произодителям
+        private void заказыПоПроизводителямToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FReportMan reportMan = new FReportMan();
+            reportMan.Show();
         }
     }
 }

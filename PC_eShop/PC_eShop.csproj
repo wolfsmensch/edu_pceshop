@@ -95,6 +95,12 @@
     <Compile Include="FReportCat.Designer.cs">
       <DependentUpon>FReportCat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FReportMan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReportMan.Designer.cs">
+      <DependentUpon>FReportMan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FAddDevice.resx">
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FReportCat.resx">
       <DependentUpon>FReportCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReportMan.resx">
+      <DependentUpon>FReportMan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
