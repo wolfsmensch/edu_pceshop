@@ -125,6 +125,7 @@
             this.заказыПоМесяцамToolStripMenuItem.Name = "заказыПоМесяцамToolStripMenuItem";
             this.заказыПоМесяцамToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.заказыПоМесяцамToolStripMenuItem.Text = "Заказы по месяцам";
+            this.заказыПоМесяцамToolStripMenuItem.Click += new System.EventHandler(this.заказыПоМесяцамToolStripMenuItem_Click);
             // 
             // panel1
             // 

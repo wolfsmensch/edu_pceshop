@@ -123,5 +123,12 @@ namespace PC_eShop
             FReportMan reportMan = new FReportMan();
             reportMan.Show();
         }
+
+        // Пункт меню: Отчеты -> Заказы по месяцам
+        private void заказыПоМесяцамToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FReportOrders reportOrders = new FReportOrders();
+            reportOrders.Show();
+        }
     }
 }
