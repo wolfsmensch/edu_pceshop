@@ -76,6 +76,12 @@
     <Compile Include="FDevicesList.Designer.cs">
       <DependentUpon>FDevicesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FOrderDetails.Designer.cs">
+      <DependentUpon>FOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FDevicesList.resx">
       <DependentUpon>FDevicesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FOrderDetails.resx">
+      <DependentUpon>FOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -42,6 +42,7 @@
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.gridOrdersList = new System.Windows.Forms.DataGridView();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrdersList)).BeginInit();
@@ -217,6 +218,7 @@
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.DataGridView gridOrdersList;
         private System.Windows.Forms.Button btnUpdate;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
