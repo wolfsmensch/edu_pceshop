@@ -39,8 +39,9 @@
             this.заказыПоПроизводителямToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заказыПоМесяцамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gridOrdersList = new System.Windows.Forms.DataGridView();
             this.btnAddOrder = new System.Windows.Forms.Button();
+            this.gridOrdersList = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrdersList)).BeginInit();
@@ -124,12 +125,29 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnAddOrder);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 409);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 41);
             this.panel1.TabIndex = 1;
+            // 
+            // btnAddOrder
+            // 
+            this.btnAddOrder.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAddOrder.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAddOrder.FlatAppearance.BorderSize = 2;
+            this.btnAddOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddOrder.ForeColor = System.Drawing.Color.White;
+            this.btnAddOrder.Location = new System.Drawing.Point(640, 5);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(154, 32);
+            this.btnAddOrder.TabIndex = 0;
+            this.btnAddOrder.Text = "Добавить заказ";
+            this.btnAddOrder.UseVisualStyleBackColor = false;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // gridOrdersList
             // 
@@ -145,20 +163,20 @@
             this.gridOrdersList.Size = new System.Drawing.Size(800, 385);
             this.gridOrdersList.TabIndex = 2;
             // 
-            // btnAddOrder
+            // btnUpdate
             // 
-            this.btnAddOrder.FlatAppearance.BorderColor = System.Drawing.Color.LightGreen;
-            this.btnAddOrder.FlatAppearance.BorderSize = 2;
-            this.btnAddOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAddOrder.ForeColor = System.Drawing.Color.Green;
-            this.btnAddOrder.Location = new System.Drawing.Point(640, 5);
-            this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(154, 32);
-            this.btnAddOrder.TabIndex = 0;
-            this.btnAddOrder.Text = "Добавить заказ";
-            this.btnAddOrder.UseVisualStyleBackColor = false;
-            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnUpdate.FlatAppearance.BorderSize = 2;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnUpdate.Location = new System.Drawing.Point(493, 6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(141, 31);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Обновить список";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // MainForm
             // 
@@ -198,6 +216,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.DataGridView gridOrdersList;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

@@ -93,5 +93,11 @@ namespace PC_eShop
             FDevicesList devicesList = new FDevicesList();
             devicesList.ShowDialog();
         }
+
+        // Нажата кнопка: Обновить список
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            updOrdersTable();
+        }
     }
 }
