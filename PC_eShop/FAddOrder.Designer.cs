@@ -41,13 +41,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridDevice = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAddToList = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDevice)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,27 +173,27 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.gridDevice);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(285, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(592, 507);
+            this.panel2.Size = new System.Drawing.Size(739, 507);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // gridDevice
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 451);
-            this.dataGridView1.TabIndex = 1;
+            this.gridDevice.AllowUserToAddRows = false;
+            this.gridDevice.AllowUserToDeleteRows = false;
+            this.gridDevice.BackgroundColor = System.Drawing.Color.White;
+            this.gridDevice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gridDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDevice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDevice.Location = new System.Drawing.Point(0, 0);
+            this.gridDevice.Name = "gridDevice";
+            this.gridDevice.ReadOnly = true;
+            this.gridDevice.Size = new System.Drawing.Size(739, 451);
+            this.gridDevice.TabIndex = 1;
             // 
             // panel3
             // 
@@ -202,7 +202,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 451);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(592, 56);
+            this.panel3.Size = new System.Drawing.Size(739, 56);
             this.panel3.TabIndex = 0;
             // 
             // btnAddToList
@@ -212,7 +212,7 @@
             this.btnAddToList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToList.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddToList.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnAddToList.Location = new System.Drawing.Point(391, 8);
+            this.btnAddToList.Location = new System.Drawing.Point(538, 8);
             this.btnAddToList.Name = "btnAddToList";
             this.btnAddToList.Size = new System.Drawing.Size(189, 38);
             this.btnAddToList.TabIndex = 0;
@@ -224,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 507);
+            this.ClientSize = new System.Drawing.Size(1024, 507);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FAddOrder";
@@ -234,7 +234,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDevice)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -255,7 +255,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridDevice;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAddToList;
     }

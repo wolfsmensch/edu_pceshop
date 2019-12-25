@@ -13,15 +13,64 @@ namespace PC_eShop
 {
     public partial class FAddOrder : Form
     {
+        private List<Device> devicesList = null;
+
         public FAddOrder()
         {
             InitializeComponent();
+
+            devicesList = new List<Device>();
+            updDeviceTable();
         }
 
+        // Нажата кнопка "Добавить комплектующие"
         private void btnAddToList_Click(object sender, EventArgs e)
         {
             FAddOrderDevice addOrderDevice = new FAddOrderDevice(this);
             addOrderDevice.ShowDialog();
+        }
+
+        // Обновление таблицы комплектующих
+        private void updDeviceTable()
+        {
+            // Настройка таблицы
+            gridDevice.Rows.Clear();
+
+            gridDevice.ColumnCount = 7;
+
+            gridDevice.Columns[0].Name = "ID";
+            gridDevice.Columns[1].Name = "Название";
+            gridDevice.Columns[2].Name = "Производитель";
+            gridDevice.Columns[3].Name = "Категория";
+            gridDevice.Columns[4].Name = "Кол-во на складе";
+            gridDevice.Columns[5].Name = "Цена";
+            gridDevice.Columns[6].Name = "Описание";
+
+            gridDevice.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gridDevice.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gridDevice.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gridDevice.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            gridDevice.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            gridDevice.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridDevice.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridDevice.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridDevice.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridDevice.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridDevice.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
+            gridDevice.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            gridDevice.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridDevice.MultiSelect = false;
+
+            // Вывод данных в таблицу
+            for (int i = 0; i < devicesList.Count; i++)
+            {
+                Device devRec = devicesList[i];
+                string[] rowData = { devRec.ID.ToString(), devRec.Name, devRec.ManName, devRec.CatName, devRec.StockQuant.ToString() + " шт.", devRec.Price.ToString()+" тг.", devRec.TechDesc };
+
+                gridDevice.Rows.Add(rowData);
+            }
         }
     }
 
@@ -43,7 +92,7 @@ namespace PC_eShop
         public string TechDesc;
 
         // Получение списка комплектующих по ID категории
-        public List<Device> getByCatID(int catID)
+        public static List<Device> getByCatID(int catID)
         {
             List<Device> list = new List<Device>();
 
