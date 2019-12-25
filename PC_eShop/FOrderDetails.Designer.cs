@@ -47,11 +47,10 @@
             this.gridDevice.BackgroundColor = System.Drawing.Color.White;
             this.gridDevice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDevice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridDevice.Location = new System.Drawing.Point(0, 0);
+            this.gridDevice.Location = new System.Drawing.Point(0, 49);
             this.gridDevice.Name = "gridDevice";
             this.gridDevice.ReadOnly = true;
-            this.gridDevice.Size = new System.Drawing.Size(800, 450);
+            this.gridDevice.Size = new System.Drawing.Size(800, 401);
             this.gridDevice.TabIndex = 0;
             // 
             // panel1
