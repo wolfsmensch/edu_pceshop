@@ -27,6 +27,8 @@ namespace PC_eShop
             List<ReportCat> reportCats = ReportCat.getList(dateFrom.Value, dateTo.Value);
 
             // Настройка графика
+            chartCat.Series.Clear();
+
             // Добавление серий по категориям
             for (int i = 0; i < reportCats.Count; i++)
             {
@@ -42,6 +44,19 @@ namespace PC_eShop
 
                 chartCat.Series.Add(catSer);
             }
+        }
+
+        /* 
+         * Изменен период 
+         */
+        private void dateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            updChart();
+        }
+
+        private void dateTo_ValueChanged(object sender, EventArgs e)
+        {
+            updChart();
         }
     }
 

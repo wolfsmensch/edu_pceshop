@@ -72,6 +72,7 @@
             this.dateTo.Size = new System.Drawing.Size(138, 20);
             this.dateTo.TabIndex = 4;
             this.dateTo.Value = new System.DateTime(2019, 12, 31, 11, 2, 0, 0);
+            this.dateTo.ValueChanged += new System.EventHandler(this.dateTo_ValueChanged);
             // 
             // dateFrom
             // 
@@ -80,6 +81,7 @@
             this.dateFrom.Size = new System.Drawing.Size(138, 20);
             this.dateFrom.TabIndex = 3;
             this.dateFrom.Value = new System.DateTime(2019, 1, 1, 11, 2, 0, 0);
+            this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
             // 
             // label3
             // 
