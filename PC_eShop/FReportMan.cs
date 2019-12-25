@@ -17,6 +17,38 @@ namespace PC_eShop
         public FReportMan()
         {
             InitializeComponent();
+            updChart();
+        }
+
+        // Обновление графика
+        private void updChart()
+        {
+            // Получение данных
+            List<ReportMan> reports = ReportMan.getList();
+
+            // Настройка графика
+            chartMan.Series.Clear();
+
+            // Добавление серий по производителям
+            for (int i = 0; i < reports.Count; i++)
+            {
+                Series manSer = new Series();
+
+                manSer.ChartArea = chartMan.ChartAreas[0].Name;
+                manSer.ChartType = SeriesChartType.Column;
+                manSer.Legend = chartMan.Legends[0].Name;
+                manSer.LegendText = reports[i].Name;
+
+                manSer.Points.AddXY(i, reports[i].TotalCash);
+
+                chartMan.Series.Add(manSer);
+            }
+        }
+
+        // Нажата кнопка "Обновить график"
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            updChart();
         }
     }
 
