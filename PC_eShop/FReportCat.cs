@@ -8,17 +8,40 @@ using System.Text;
 using System.Windows.Forms;
 
 using System.Data.SqlClient;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PC_eShop
 {
     public partial class FReportCat : Form
     {
-        private List<ReportCat> reportCats;
-
         public FReportCat()
         {
             InitializeComponent();
-            reportCats = ReportCat.getList(dateFrom.Value, dateTo.Value);
+            updChart();
+        }
+
+        // Обновление графика
+        private void updChart()
+        {
+            // Получение данных
+            List<ReportCat> reportCats = ReportCat.getList(dateFrom.Value, dateTo.Value);
+
+            // Настройка графика
+            // Добавление серий по категориям
+            for (int i = 0; i < reportCats.Count; i++)
+            {
+                // chartCat
+                Series catSer = new Series();
+
+                catSer.ChartArea = chartCat.ChartAreas[0].Name;
+                catSer.ChartType = SeriesChartType.Column;
+                catSer.Legend = chartCat.Legends[0].Name;
+                catSer.LegendText = reportCats[i].Name;
+
+                catSer.Points.AddXY(i, reportCats[i].TotalPrice);
+
+                chartCat.Series.Add(catSer);
+            }
         }
     }
 
