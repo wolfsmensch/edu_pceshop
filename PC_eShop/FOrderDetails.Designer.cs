@@ -31,10 +31,10 @@
             this.gridDevice = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textN = new System.Windows.Forms.TextBox();
+            this.textFIO = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridDevice)).BeginInit();
             this.panel1.SuspendLayout();
@@ -45,6 +45,7 @@
             this.gridDevice.AllowUserToAddRows = false;
             this.gridDevice.AllowUserToDeleteRows = false;
             this.gridDevice.BackgroundColor = System.Drawing.Color.White;
+            this.gridDevice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDevice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridDevice.Location = new System.Drawing.Point(0, 0);
@@ -55,11 +56,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textPhone);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textFIO);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textN);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -77,19 +78,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер заказа";
             // 
-            // textBox1
+            // textN
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(77, 20);
-            this.textBox1.TabIndex = 1;
+            this.textN.Location = new System.Drawing.Point(104, 12);
+            this.textN.Name = "textN";
+            this.textN.ReadOnly = true;
+            this.textN.Size = new System.Drawing.Size(77, 20);
+            this.textN.TabIndex = 1;
             // 
-            // textBox2
+            // textFIO
             // 
-            this.textBox2.Location = new System.Drawing.Point(283, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(239, 20);
-            this.textBox2.TabIndex = 3;
+            this.textFIO.Location = new System.Drawing.Point(283, 12);
+            this.textFIO.Name = "textFIO";
+            this.textFIO.ReadOnly = true;
+            this.textFIO.Size = new System.Drawing.Size(239, 20);
+            this.textFIO.TabIndex = 3;
             // 
             // label2
             // 
@@ -100,12 +103,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "ФИО заказчика";
             // 
-            // textBox3
+            // textPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(642, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 20);
-            this.textBox3.TabIndex = 5;
+            this.textPhone.Location = new System.Drawing.Point(642, 12);
+            this.textPhone.Name = "textPhone";
+            this.textPhone.ReadOnly = true;
+            this.textPhone.Size = new System.Drawing.Size(140, 20);
+            this.textPhone.TabIndex = 5;
             // 
             // label3
             // 
@@ -141,11 +145,11 @@
 
         private System.Windows.Forms.DataGridView gridDevice;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textFIO;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textN;
         private System.Windows.Forms.Label label1;
     }
 }

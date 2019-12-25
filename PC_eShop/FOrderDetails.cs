@@ -17,6 +17,16 @@ namespace PC_eShop
         {
             InitializeComponent();
             this.order = order;
+
+            showHeader();
+        }
+
+        // Формирование заголовка таблицы
+        private void showHeader()
+        {
+            textN.Text = order.ID.ToString();
+            textFIO.Text = order.clientName;
+            textPhone.Text = order.clientPhone;
         }
     }
 }
