@@ -201,6 +201,45 @@ namespace PC_eShop
 
             return list;
         }
+
+        // Получение списка по ID заказа
+        public static List<Device> getByOrderID(int ordID)
+        {
+            List<Device> list = new List<Device>();
+
+            SqlDataReader reader = DataBase.readData(  "SELECT [Goods].[G_ID], [Goods].[Name], [Categories].[Name], [Categories].[CAT_ID], [Manufacturer].[Name], " +
+                                                       "[Manufacturer].[MF_ID], [Goods].[Price], [Goods].[StockQuant], [Goods].[TechDesc] " +
+                                                       "FROM[Goods], [Manufacturer], [Categories], [OrderList] " +
+                                                       "WHERE[Goods].[MF_ID] = [Manufacturer].[MF_ID] " +
+                                                       "AND[Goods].[CAT_ID] = [Categories].[CAT_ID] " +
+                                                       "AND[Goods].[G_ID] = [OrderList].[G_ID] " +
+                                                       "AND[OrderList].[ORD_ID] = " + ordID.ToString());
+
+            while (reader.HasRows && reader.Read())
+            {
+                Device device = new Device();
+
+                device.ID = reader.GetInt32(0);
+                device.Name = reader.GetString(1);
+
+                device.CatID = reader.GetInt32(3);
+                device.ManID = reader.GetInt32(5);
+
+                device.CatName = reader.GetString(2);
+                device.ManName = reader.GetString(4);
+
+                device.StockQuant = reader.GetInt32(7);
+                device.Price = reader.GetInt32(6);
+
+                device.TechDesc = reader.GetString(8);
+
+                list.Add(device);
+            }
+
+            reader.Close();
+
+            return list;
+        }
     }
 
     // Класс заказов
@@ -235,6 +274,35 @@ namespace PC_eShop
             // Связывание устройств с заказом
             for (int i = 0; i < orderList.Count; i++)
                 attachDeviceAndOrder(orderList[i].ID);
+        }
+
+        // Получение списка всех заказов
+        public static List<Order> getList()
+        {
+            List<Order> orders = new List<Order>();
+
+            // Получение записей о заказах
+            SqlDataReader reader = DataBase.readData("SELECT [ORD_ID], [OrdDate], [ClientName], [ClientPhone], [TotalPrice] FROM [Order]");
+            while (reader.HasRows && reader.Read())
+            {
+                Order rec = new Order();
+
+                rec.ID = reader.GetInt32(0);
+                rec.dateCreate = reader.GetDateTime(1);
+                rec.clientName = reader.GetString(2);
+                rec.clientPhone = reader.GetString(3);
+                rec.totalPrice = reader.GetInt32(4);
+
+                orders.Add(rec);
+            }
+
+            reader.Close();
+
+            // Получение состава заказов
+            for (int i = 0; i < orders.Count; i++)
+                orders[i].orderList = Device.getByOrderID(orders[i].ID);
+
+            return orders;
         }
 
         // Связывание устройства с заказом
