@@ -109,5 +109,12 @@ namespace PC_eShop
                 orderDetails.Show();
             }
         }
+
+        // Пункт меню: Отчет -> Отчет по категориям
+        private void заказыПоКатегориямToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FReportCat reportCat = new FReportCat();
+            reportCat.ShowDialog();
+        }
     }
 }

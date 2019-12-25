@@ -111,6 +111,7 @@
             this.заказыПоКатегориямToolStripMenuItem.Name = "заказыПоКатегориямToolStripMenuItem";
             this.заказыПоКатегориямToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.заказыПоКатегориямToolStripMenuItem.Text = "Заказы по категориям";
+            this.заказыПоКатегориямToolStripMenuItem.Click += new System.EventHandler(this.заказыПоКатегориямToolStripMenuItem_Click);
             // 
             // заказыПоПроизводителямToolStripMenuItem
             // 
