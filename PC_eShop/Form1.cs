@@ -114,7 +114,7 @@ namespace PC_eShop
         private void заказыПоКатегориямToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FReportCat reportCat = new FReportCat();
-            reportCat.ShowDialog();
+            reportCat.Show();
         }
     }
 }
