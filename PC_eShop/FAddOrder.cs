@@ -170,4 +170,67 @@ namespace PC_eShop
             return list;
         }
     }
+
+    // Класс заказов
+    public class Order
+    {
+        public int ID;
+
+        public DateTime dateCreate;
+
+        public string clientName;
+        public string clientPhone;
+
+        public int totalPrice;
+
+        public List<Device> orderList;
+        
+        // Добавление заказа в БД
+        public void addToDB()
+        {
+            // Создание записи заказа
+            DataBase.execSql("INSERT INTO [Order] (OrdDate, ClientName, ClientPhone, TotalPrice) " +
+                             "VALUES('"+dateCreate.ToShortDateString()+ "', '"+clientName+"', '"+clientPhone+"', "+getTotalPrice().ToString()+")");
+
+            // Получение ID нового заказа
+            SqlDataReader reader = DataBase.readData("select @@IDENTITY");
+            ID = reader.GetInt32(0);
+            reader.Close();
+
+            // Связывание устройств с заказом
+            for (int i = 0; i < orderList.Count; i++)
+                attachDeviceAndOrder(orderList[i].ID);
+        }
+
+        // Связывание устройства с заказом
+        private void attachDeviceAndOrder(int deviceID)
+        {
+            // Связывание
+            DataBase.execSql("INSERT INTO [OrderList] (ORD_ID, G_ID) VALUES (" + ID.ToString() + ", " + deviceID.ToString() + ")");
+
+            // Вычитание кол-ва устройства на складе
+            SqlDataReader reader = DataBase.readData("SELECT [StockQuant] FROM [Goods] WHERE [G_ID] = " + deviceID.ToString());
+            if ( reader.HasRows && reader.Read() )
+            {
+                int count = reader.GetInt32(0) - 1;
+                reader.Close();
+
+                DataBase.execSql("UPDATE [Goods] SET [StockQuant] = "+count.ToString()+" WHERE [G_ID] = " + deviceID.ToString());
+            }
+        }
+
+        // Получение итоговой цены заказа
+        private int getTotalPrice()
+        {
+            int sum = 0;
+
+            if (orderList.Count > 0)
+            {
+                for (int i = 0; i < orderList.Count; i++)
+                    sum += orderList[i].Price;
+            }
+
+            return sum;
+        }
+    }
 }
